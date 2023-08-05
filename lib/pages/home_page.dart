@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/widgets/card-widgets.dart';
+import 'package:quiz_app/widgets/card_widgets.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 
@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.black54,
                     ),
                   ),
-                  SizedBox(height: sizeOfTheDevice.height * 0.1),
+                  SizedBox(height: sizeOfTheDevice.height * 0.06),
                   Column(
                     children: [
                       Row(
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                           )
                         ],
                       ),
-                      const SizedBox(height: 8.0),
+                      const SizedBox(height: 9.0),
                       StepProgressIndicator(
                         size:2,
                         currentStep: questionIndex+1,
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 12), 
+                  const SizedBox(height: 14.0), 
                   for(int i = 0; i< questionWithAnswer['answers'].length; i++)
                   Padding(
                     padding: const EdgeInsets.only( bottom: 16.0),
@@ -167,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
                           child: Row(
                             children: [
                               CardWidgets(cardImage: answerIcons[i]),
@@ -179,8 +179,8 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 answerTexts[i],
                                 style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w500,
                                   color: i == yourChoiceIndex ? Colors.white : Colors.black,
                                 ),
                               ),
@@ -212,7 +212,7 @@ class _HomePageState extends State<HomePage> {
                                 backgroundColor: Colors.transparent,
                                 content: AwesomeSnackbarContent(
                                   title:'Warning!',
-                                  message:'Please, Choose one anwer to start a quiz!',
+                                  message:' Please, Choose the anwer!',
                                   contentType: ContentType.warning,
                                 ),
                               );
@@ -234,6 +234,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                 const SizedBox(height: 10.0),
                 ],
               ],
           ) : Center(
